@@ -111,7 +111,7 @@ export function Header() {
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <Button href="/register" color="red">
               <span>
-                Join BanklessDAO <span className="hidden lg:inline">today</span>
+              <span className="hidden lg:inline">Join</span> BanklessDAO <span className="hidden lg:inline">today</span>
               </span>
             </Button>
             <div className="-mr-1 md:hidden">
