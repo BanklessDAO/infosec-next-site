@@ -78,7 +78,7 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#testimonials">Our Team</MobileNavLink>
+            <MobileNavLink href="/team">Our Team</MobileNavLink>
             <MobileNavLink href="#testimonials">Latest News</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
@@ -93,7 +93,7 @@ export function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
+            <Link href="/" aria-label="Home">
               {/* <Logo className="h-10 w-auto" /> */}
               <Image
                 src={Logo}
@@ -104,14 +104,14 @@ export function Header() {
               />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Our Team</NavLink>
+              <NavLink href="/team">Our Team</NavLink>
               <NavLink href="#features">Latest News</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <Button href="/register" color="red">
               <span>
-                Join BanklessDAO <span className="hidden lg:inline">today</span>
+              <span className="hidden lg:inline">Join</span> BanklessDAO <span className="hidden lg:inline">today</span>
               </span>
             </Button>
             <div className="-mr-1 md:hidden">
