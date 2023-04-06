@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { useEffect, useId, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
+import { FaTwitter } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
 import { DiamondIcon } from '@/components/DiamondIcon'
@@ -16,36 +18,41 @@ import stackthatethImage from '@/images/avatars/stackthat-eth-2.png'
 import tonystarkImage from '@/images/avatars/tony-stark.jpg'
 
 
-const days = [
+const seasons = [
   {
     name: 'Opening Day',
     date: 'April 4',
     dateTime: '2022-04-04',
-    speakers: [
+    members: [
       {
         name: 'BogDrakonov',
         role: 'InfoSec Team Coordinator',
         image: bogdrakonovImage,
+        twitter: 'https://twitter.com/BogDrakonov'
       },
       {
         name: 'Dysan',
         role: 'InfoSec POAP Master',
         image: downl0reImage,
+        twitter: 'https://twitter.com/dysntr'
       },
       {
         name: 'd0wnl0re',
         role: 'InfoSec Education Coordinator',
         image: dysanImage,
+        twitter: 'https://twitter.com/d0wnlore'
       },
       {
         name: 'StackThatEth',
         role: 'InfoSec Engineer',
         image: stackthatethImage,
+        twitter: 'https://twitter.com/stackthat0x'
       },
       {
         name: 'Tony Stark',
         role: 'InfoSec Engineer',
         image: tonystarkImage,
+        twitter: 'https://twitter.com/sudo_okhai'
       },
     ],
   },
@@ -98,17 +105,17 @@ export default function Team() {
         />
       </Head>
       <Header />
-      <main>
+      <main className='mb-5'>
         <section
-      id="speakers"
-      aria-labelledby="speakers-title"
+      id="members"
+      aria-labelledby="members-title"
       className="py-5 sm:py-5"
     >
       <ImageClipPaths id={id} />
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
-            id="speakers-title"
+            id="members-title"
             className="font-display text-4xl font-medium tracking-tighter text-black-600 sm:text-5xl"
           >
             Our Team
@@ -126,7 +133,7 @@ export default function Team() {
             <div className="absolute bottom-0 left-0.5 top-2 hidden w-px bg-slate-200 lg:block" />
             <Tab.List className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 whitespace-nowrap px-4 sm:mx-auto sm:max-w-2xl sm:grid-cols-3 sm:px-0 sm:text-center lg:grid-flow-row lg:grid-cols-1 lg:text-left">
               {({ selectedIndex }) =>
-                days.map((day, dayIndex) => (
+                seasons.map((day, dayIndex) => (
                   <div key={day.dateTime} className="relative lg:pl-8">
                     <DiamondIcon
                       className={clsx(
@@ -163,14 +170,14 @@ export default function Team() {
             </Tab.List>
           </div>
           <Tab.Panels className="lg:col-span-3">
-            {days.map((day) => (
+            {seasons.map((day) => (
               <Tab.Panel
                 key={day.dateTime}
                 className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3 [&:not(:focus-visible)]:focus:outline-none"
                 unmount={false}
               >
-                {day.speakers.map((speaker, speakerIndex) => (
-                  <div key={speakerIndex}>
+                {day.members.map((member, memberIndex) => (
+                  <div key={memberIndex}>
                     <div className="group relative h-[17.5rem] transform overflow-hidden rounded-4xl">
                       <div
                         className={clsx(
@@ -179,16 +186,16 @@ export default function Team() {
                             'border-blue-300',
                             'border-indigo-300',
                             'border-sky-300',
-                          ][speakerIndex % 3]
+                          ][memberIndex % 3]
                         )}
                       />
                       <div
                         className="absolute inset-0 bg-indigo-50"
-                        style={{ clipPath: `url(#${id}-${speakerIndex % 3})` }}
+                        style={{ clipPath: `url(#${id}-${memberIndex % 3})` }}
                       >
                         <Image
                           className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                          src={speaker.image}
+                          src={member.image}
                           alt=""
                           priority
                           sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -196,11 +203,14 @@ export default function Team() {
                       </div>
                     </div>
                     <h3 className="mt-8 font-display text-xl font-bold tracking-tight text-slate-900">
-                      {speaker.name}
+                      {member.name}
                     </h3>
-                    <p className="mt-1 text-base tracking-tight text-slate-500">
-                      {speaker.role}
+                    <p className="mt-1 text-base tracking-tight text-slate-500 mb-3">
+                      {member.role}
                     </p>
+                    <Link href={member.twitter} target='_blank'>
+                    <FaTwitter />
+                    </Link>
                   </div>
                 ))}
               </Tab.Panel>
