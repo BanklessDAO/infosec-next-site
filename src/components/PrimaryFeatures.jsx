@@ -4,36 +4,38 @@ import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-features.jpg'
+// import backgroundImage from '@/images/background-features.jpg'
+import backgroundImage from '@/images/background-call-to-action-1.png'
 import screenshotExpenses from '@/images/screenshots/expenses.png'
 import screenshotPayroll from '@/images/screenshots/payroll.png'
 import screenshotReporting from '@/images/screenshots/reporting.png'
 import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import screenshotSecurity from '@/images/screenshots/security.jpeg'
 
 const features = [
   {
     title: 'Web Security & Auditing',
     description:
       "Infrastructure and IAM audit services to ensure your environments are protected.",
-    image: screenshotPayroll,
+    image: screenshotSecurity,
   },
   {
     title: 'DevOps',
     description:
       "Infrastructure design, CI/CD automation, Infrastructure deployment, management and audit.",
-    image: screenshotExpenses,
+    image: screenshotSecurity,
   },
   {
     title: 'Zero Trust',
     description:
       "Modern authentication models for modern organizations.",
-    image: screenshotVatReturns,
+    image: screenshotSecurity,
   },
   {
     title: 'Discord Security & Management',
     description:
       'Discord setup, roles and permission, and ongoing security management to keep spammers and bots from infiltrating your community.',
-    image: screenshotReporting,
+    image: screenshotSecurity,
   },
 ]
 
@@ -59,7 +61,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-red-600 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden pb-28 pt-20 sm:py-32"
     >
       <Image
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"

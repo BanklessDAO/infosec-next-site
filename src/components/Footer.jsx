@@ -13,7 +13,6 @@ export function Footer() {
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="/team">Our Team</NavLink>
-              <NavLink href="#pricing">Latest News</NavLink>
             </div>
           </nav>
         </div>
@@ -45,7 +44,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            Copyright &copy; {new Date().getFullYear()} Bankless InfoSec. Creative Commons.
+            Copyright &copy; {new Date().getFullYear()} Bankless InfoSec.
           </p>
         </div>
       </Container>

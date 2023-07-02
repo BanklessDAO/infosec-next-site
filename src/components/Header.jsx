@@ -47,12 +47,12 @@ function MobileNavIcon({ open }) {
 function MobileNavigation() {
   return (
     <Popover>
-      <Popover.Button
+      {/* <Popover.Button
         className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
       >
         {({ open }) => <MobileNavIcon open={open} />}
-      </Popover.Button>
+      </Popover.Button> */}
       <Transition.Root>
         <Transition.Child
           as={Fragment}
@@ -79,7 +79,7 @@ function MobileNavigation() {
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
             <MobileNavLink href="/team">Our Team</MobileNavLink>
-            <MobileNavLink href="#testimonials">Latest News</MobileNavLink>
+            {/* <MobileNavLink href="#testimonials">Latest News</MobileNavLink> */}
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -104,16 +104,12 @@ export function Header() {
               />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/team">Our Team</NavLink>
-              <NavLink href="#features">Latest News</NavLink>
+              {/* <NavLink href="/team">Our Team</NavLink> */}
+              {/* <NavLink href="#features">Latest News</NavLink> */}
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <Button href="/register" color="red">
-              <span>
-              <span className="hidden lg:inline">Join</span> BanklessDAO <span className="hidden lg:inline">today</span>
-              </span>
-            </Button>
+            <Button href="#">Get a free quote</Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>

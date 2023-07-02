@@ -8,6 +8,7 @@ import logoStatamic from '@/images/logos/statamic.svg'
 import logoStaticKit from '@/images/logos/statickit.svg'
 import logoTransistor from '@/images/logos/transistor.svg'
 import logoTuple from '@/images/logos/tuple.svg'
+import banklessConsulting from '@/images/logos/banklessConsulting.svg'
 
 export function Hero() {
   return (
@@ -30,23 +31,11 @@ export function Hero() {
       Secure your decentralized future with BanklessDAO Infosec - the premier digital security and infrastructure management organization for blockchain and cryptocurrency organizations.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Get a free quote</Button>
-        <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          variant="outline"
-        >
-          <svg
-            aria-hidden="true"
-            className="h-3 w-3 flex-none fill-red-600 group-active:fill-current"
-          >
-            <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
-          </svg>
-          <span className="ml-3">BanklessDAO</span>
-        </Button>
+        <Button href="#">Get a free quote</Button>
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
-          Trusted by these companies so far
+          Trusted by these organizations so far
         </p>
         <ul
           role="list"
@@ -54,15 +43,13 @@ export function Hero() {
         >
           {[
             [
-              { name: 'Transistor', logo: logoTransistor },
-              { name: 'Tuple', logo: logoTuple },
-              { name: 'StaticKit', logo: logoStaticKit },
+              { name: 'Bankless Consulting', logo: banklessConsulting },
             ],
-            [
-              { name: 'Mirage', logo: logoMirage },
-              { name: 'Laravel', logo: logoLaravel },
-              { name: 'Statamic', logo: logoStatamic },
-            ],
+            // [
+            //   { name: 'Mirage', logo: logoMirage },
+            //   { name: 'Laravel', logo: logoLaravel },
+            //   { name: 'Statamic', logo: logoStatamic },
+            // ],
           ].map((group, groupIndex) => (
             <li key={groupIndex}>
               <ul
